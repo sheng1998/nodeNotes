@@ -10,6 +10,9 @@ selenium-debug.log
 /.history/
 /.VSCodeCounter/
 /study/
+/重学node基础/07_url模块（爬虫）/使用cheerio处理数据/爬取表情包/img/
+/重学node基础/07_url模块（爬虫）/request模拟爬虫/img/
+/重学node基础/07_url模块（爬虫）/模拟浏览器操作-Puppeteer/获取小说标题，链接/test/
 
 # Editor directories and files
 .idea
