@@ -167,6 +167,7 @@ kitty.save().then(() => console.log('meow'));
 ```
 
 ### 增加数据
+可以修改为 promise 方式
 ```javascript
 // 引入 mongoose 包
 let mongoose = require('mongoose')
@@ -236,7 +237,7 @@ sheng.save().then(() => {
 <br>
 
 ### 删除数据
-以数组的形式返回被删除的数据集
+以数组的形式返回被删除的数据集，可以修改为 promise 方式
 ```javascript
 User.remove({
     username: 'sheng'
@@ -250,7 +251,7 @@ User.remove({
 ```
 
 #### 根据 ID 查找数据并删除
-返回被返回的数据
+返回被返回的数据，可以修改为 promise 方式
 ```javascript
 User.findByIdAndDelete('5ff0131fd9b93428b85be0c7', (err, data) => {
     if(err) {
@@ -264,7 +265,7 @@ User.findByIdAndDelete('5ff0131fd9b93428b85be0c7', (err, data) => {
 <br>
 
 #### 删除满足条件的一条数据
-返回被返回的数据
+返回被返回的数据，可以修改为 promise 方式
 ```javascript
 User.findOneAndDelete({
     'username': 'sheng'
@@ -282,7 +283,7 @@ User.findOneAndDelete({
 ### 修改数据
 
 #### 根据 ID 查找数据并更新
-返回更新前的数据
+返回更新前的数据，可以修改为 promise 方式
 ```javascript
 User.findByIdAndUpdate('5ff00c334c612212a00c5d4e', {
     'password': 'abc'
@@ -296,7 +297,7 @@ User.findByIdAndUpdate('5ff00c334c612212a00c5d4e', {
 ```
 
 #### 根据条件更新数据
-经过测试只会更新查询到的第一条数据，同时也存在 `updateOne` 方法
+经过测试只会更新查询到的第一条数据，同时也存在 `updateOne` 方法，可以修改为 promise 方式
 ```javascript
 User.update({
     'username': 'sheng'
@@ -316,6 +317,7 @@ User.update({
 ### 查询数据
 
 #### 查询所有数据
+可以修改为 promise 方式
 ```javascript
 User.find((err, data) => {
     if(err) {
@@ -329,6 +331,7 @@ User.find((err, data) => {
 <br>
 
 #### 查询表的第一条数据
+可以修改为 promise 方式
 ```javascript
 User.findOne((err, data) => {
     if(err) {
@@ -342,7 +345,7 @@ User.findOne((err, data) => {
 <br>
 
 #### 根据条件查询数据
-根据条件查询数据（以数组形式返回一个满足条件的数据集），`find` 方法的第一个参数指定查询的条件，该参数为对象，可以指定多个查询条件，`findOne` 返回满足条件的一条数据。
+根据条件查询数据（以数组形式返回一个满足条件的数据集），`find` 方法的第一个参数指定查询的条件，该参数为对象，可以指定多个查询条件，`findOne` 返回满足条件的一条数据。可以修改为 promise 方式
 ```javascript
 User.find({ 'username': 'ta', 'age': 19}, (err, data) => {
     if(err) {
@@ -356,7 +359,7 @@ User.find({ 'username': 'ta', 'age': 19}, (err, data) => {
 <br>
 
 #### 根据 ID 查询数据
-返回结果只有一条数据（因为 id 是唯一的）
+返回结果只有一条数据（因为 id 是唯一的），可以修改为 promise 方式
 ```javascript
 User.findById('5ff00c363f52cf2dc0c9903a', (err, data) => {
     if(err) {

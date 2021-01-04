@@ -54,3 +54,10 @@ User.findById('5ff00c363f52cf2dc0c9903a', (err, data) => {
         console.log(data)
     }
 })
+
+User.findById('5ff00c363f52cf2dc0c9903a').then(data => {
+    console.log('--------------------------')
+    console.log(data)
+}, err => {
+    console.log('查询失败！')
+})
