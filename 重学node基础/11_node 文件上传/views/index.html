@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <input class="file" type="file" name="" id="" value="选择文件">
+    <input class="submit" type="submit" value="提交">
+
+    <script>
+        let submit = document.querySelector('.submit')
+
+        submit.onclick = function () {
+            let file = document.querySelector('.file').files[0]
+            console.log(file)
+
+            let formData = new FormData()
+            formData.append("file", file, file.name)
+            axios({
+                    method: 'post',
+                    url: '/file',
+                    data: formData,
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(
+                    res => {
+                        console.log('上传成功！')
+                    }
+                )
+                .catch(
+                    err => {
+                        console.log('上传失败！')
+                    }
+                )
+        }
+    </script>
+</body>
+
+</html>
